@@ -9,23 +9,38 @@
  * @author User
  */
 public class calculadora {
-    String temp = "12+4*3+";
-    StackArrayList<String> stack = new StackArrayList();
+    StackArrayList<Double> stack = new StackArrayList();
     
     
     public calculadora() {
-        for (int i = 0; i < temp.length(); i++) {
-            stack.push(temp.charAt(i));
-        }
     }
     
-    public double eval() {
-        while (stack.size() != 1) {
-            switch (stack.peek()) {
-                case "+":
-                    stack.push(String.valueOf(stack.pop()) + String.valueOf(stack.pop()));
-                    break;
+    //Funcion para evaluar el postfix
+    public double eval(String s) {
+        //Se recorre el string caracter por caracter
+        for (int i = 0; i < s.length(); i++) {
+            char ch = s.charAt(i);
+            //Si el caracter es un digito, se agrega el stack
+            if (Character.isDigit(ch)) {
+                stack.push(Double.parseDouble(Character.toString(ch)));
+            } else {
+                //Si el caracter no es un digito, se ralizan las operaciones con los numeros en el stack
+                switch (ch) {
+                    case '+':
+                        stack.push(stack.pop() + stack.pop());
+                        break;
+                    case '-':
+                        stack.push(stack.pop() - stack.pop());
+                        break;
+                    case '*':
+                        stack.push(stack.pop() * stack.pop());
+                        break;
+                    case '/':
+                        stack.push(stack.pop() / stack.pop());
+                        break;
+                }
             }
         }
+        return stack.peek();
     }
 }
