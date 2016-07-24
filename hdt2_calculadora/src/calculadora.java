@@ -1,22 +1,30 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * UVG - Algoritmos y Estructuras de Datos
+ * Calculadora que utiliza el Stack para hacer un calculo Postfix
+ * 
  */
 
 /**
  *
- * @author User
+ * @author Alejandro Chaclan
  */
 public class calculadora {
     StackArrayList<Double> stack = new StackArrayList();
     
-    
+    /**
+     *
+     */
     public calculadora() {
     }
     
     //Funcion para evaluar el postfix
-    public double eval(String s) {
+
+    /**
+     *
+     * @param String evaluacion en postfix
+     * @return Resultado en double
+     */
+        public double eval(String s) {
         //Se recorre el string caracter por caracter
         for (int i = 0; i < s.length(); i++) {
             char ch = s.charAt(i);
