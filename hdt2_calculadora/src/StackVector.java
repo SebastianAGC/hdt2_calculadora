@@ -1,26 +1,31 @@
-import java.util.ArrayList;
+
+import java.util.Vector;
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 
 /**
  *
- * @author arriaza96 tomado de Blackboard
- * @param <E> tipo de objeto
+ * @author Rodrigo Arriaza;
  */
-public class StackArrayList<E>
- implements Stack<E>
+public class StackVector<E> implements Stack<E>
 {
 
     /**
      *
      */
-    protected ArrayList<E> data;
+    protected Vector<E> data;
 
     /**
      * post: constructs a new, empty stack
      */
-    public StackArrayList()
+    public StackVector()
 	// 
 	{
-		data = new ArrayList<E>();
+		data = new Vector<E>();
 	}
 
     /**
@@ -76,3 +81,4 @@ public class StackArrayList<E>
 		return size() == 0;
 	}
 }
+

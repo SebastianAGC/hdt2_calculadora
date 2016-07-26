@@ -10,6 +10,7 @@
  */
 public class calculadora {
     StackArrayList<Double> stack = new StackArrayList();
+    //StackVector<Double> stack = new StackVector();
     
     /**
      *
@@ -21,7 +22,7 @@ public class calculadora {
 
     /**
      *
-     * @param String evaluacion en postfix
+     * @param s
      * @return Resultado en double
      */
         public double eval(String s) {
